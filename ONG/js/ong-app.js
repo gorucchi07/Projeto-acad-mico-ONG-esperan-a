@@ -7,6 +7,10 @@ import {
   inicializarGrafico
 } from "./grafico.js";
 
+const imagemEsperanca = import.meta.env.PROD
+  ? "./imagens/bird.avif"
+  : "../imagens/bird.avif";
+
 const routes = {
   home: () => `
     <section id="apresentacao" class="hero">
@@ -21,7 +25,7 @@ const routes = {
       </div>
 
       <div class="imagem-container">
-        <img src="../imagens/bird.avif" alt="Pássaro colorido representando esperança e liberdade">
+        <img src="${imagemEsperanca}" alt="Pássaro colorido representando esperança e liberdade">
       </div>
     </section>
 
