@@ -21,6 +21,7 @@ SPA front-end desenvolvida para a ONG Esperança, com navegação por hash route
 - Bootstrap 5.3.3 via CDN
 - Chart.js via CDN
 - Web Storage API (`localStorage`)
+- Vite para build de produção e minificação
 
 ## Estrutura principal
 
@@ -34,7 +35,7 @@ ONG/
 ├── imagens/
 │   └── bird.avif       # Imagem utilizada na página inicial
 └── js/
-    ├── boas.js          # Rotas, templates e eventos da interface
+    ├── ong-app.js       # Rotas, templates e eventos da interface
     ├── grafico.js       # Integração com Chart.js
     └── storage.js       # Leitura e gravação no localStorage
 ```
@@ -53,6 +54,32 @@ git clone https://github.com/gorucchi07/Projeto-acad-mico-ONG-esperan-a.git
 
 O uso de servidor local é recomendado porque a aplicação utiliza módulos ES6 com `import` e `export`. A aplicação também carrega Bootstrap e Chart.js por CDN, portanto a conexão com a internet deve estar disponível para carregar essas bibliotecas.
 
+### Build de produção
+
+Para instalar as dependências do build:
+
+```bash
+npm install
+```
+
+Para gerar a versão otimizada:
+
+```bash
+npm run build
+```
+
+Os arquivos minificados são gerados na pasta `dist/`. Para visualizar essa versão localmente:
+
+```bash
+npm run preview
+```
+
+### Deploy no GitHub Pages
+
+O deploy é feito pelo workflow `.github/workflows/deploy-pages.yml`. A cada push na branch `main`, o GitHub Actions instala as dependências, executa `npm run build` e publica a pasta `dist/` no GitHub Pages.
+
+No repositório, ative **Settings > Pages > Source: GitHub Actions**. Depois da execução do workflow, o GitHub disponibilizará o URL público da aplicação na seção **Environments**.
+
 ## Rotas da aplicação
 
 - `#/home`: apresentação da ONG, gráfico e contato.
@@ -63,7 +90,7 @@ O uso de servidor local é recomendado porque a aplicação utiliza módulos ES6
 
 O código JavaScript foi dividido por responsabilidade:
 
-- `boas.js` controla o fluxo da SPA e os eventos da interface.
+- `ong-app.js` controla o fluxo da SPA e os eventos da interface.
 - `storage.js` encapsula as operações de persistência local.
 - `grafico.js` concentra a criação e atualização do gráfico.
 

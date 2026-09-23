@@ -640,3 +640,55 @@ footer{
         grid-column: 8 / span 4;
     }
 }
+
+/* Teste reversível de alto contraste: mantém leitura por luminosidade, não só por cor. */
+body.alto-contraste {
+    background-color: #101820;
+    background-image: linear-gradient(135deg, rgba(16, 24, 32, 0.96), rgba(31, 48, 61, 0.96));
+    color: #f5f7fa;
+}
+
+body.alto-contraste .menu,
+body.alto-contraste footer {
+    background: #07111f;
+}
+
+body.alto-contraste .hero,
+body.alto-contraste .card,
+body.alto-contraste .form-section,
+body.alto-contraste .contato,
+body.alto-contraste .modal__content {
+    background: #182733;
+    border-color: #9fe8dc;
+    color: #f5f7fa;
+}
+
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste legend,
+body.alto-contraste .tag {
+    color: #9fe8dc;
+}
+
+body.alto-contraste .btn,
+body.alto-contraste button {
+    background: #ffd166;
+    color: #101820;
+    box-shadow: 0 0 0 2px #101820, 0 0 0 4px #ffd166;
+}
+
+body.alto-contraste input {
+    background: #f5f7fa;
+    color: #101820;
+    border-color: #9fe8dc;
+}
+
+body.alto-contraste .badge--educacao,
+body.alto-contraste .badge--assistencia,
+body.alto-contraste .badge--voluntariado,
+body.alto-contraste .feedback--success,
+body.alto-contraste .feedback--error {
+    background: #253b4a;
+    color: #f5f7fa;
+    border-color: #ffd166;
+}

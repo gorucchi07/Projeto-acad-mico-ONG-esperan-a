@@ -2,4 +2,5 @@ Cruzeiro/
 ong2/
 spa-estudo/
 udemy/
-.github/
+node_modules/
+dist/

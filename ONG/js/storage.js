@@ -1,5 +1,5 @@
-const STORAGE_KEY = "ong-voluntarios";
-const STORAGE_GRAFICO = "ong-dados";
+const STORAGE_VOLUNTARIOS = "ong-voluntarios";
+const STORAGE_GRAFICO_DADOS = "ong-dados";
 
 function lerLista(chave, valorPadrao) {
   try {
@@ -20,15 +20,15 @@ function lerLista(chave, valorPadrao) {
 }
 
 export function salvarVoluntarios(voluntarios) {
-  salvarLista(STORAGE_KEY, voluntarios);
+  salvarLista(STORAGE_VOLUNTARIOS, voluntarios);
 }
 
 export function obterVoluntarios() {
-  return lerLista(STORAGE_KEY, []);
+  return lerLista(STORAGE_VOLUNTARIOS, []);
 }
 
 export function salvarDados(dados) {
-  salvarLista(STORAGE_GRAFICO, dados);
+  salvarLista(STORAGE_GRAFICO_DADOS, dados);
 }
 
 function salvarLista(chave, valor) {
@@ -40,5 +40,5 @@ function salvarLista(chave, valor) {
 }
 
 export function carregarDados() {
-  return lerLista(STORAGE_GRAFICO, [5, 8, 7, 10]);
+  return lerLista(STORAGE_GRAFICO_DADOS, [5, 8, 7, 10]);
 }
