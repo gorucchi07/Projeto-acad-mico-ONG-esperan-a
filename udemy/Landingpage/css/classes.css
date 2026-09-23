@@ -1,0 +1,23 @@
+.main-bg {
+    background-image: url("../img/sun-tornado.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--white-color)
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: var(--gap);
+
+}
+.section { 
+    padding-top: 5rem;
+    min-height: 100vh;
+}
+.menu-spacing {
+  height: 62px;
+}
+

@@ -1,0 +1,27 @@
+* {
+    margin: 0; 
+    padding-top: 10px;
+} 
+
+.vers1 {
+    color: red;
+    font-size: 20px;
+    background-color: yellow;
+    height: 100px;
+    inline-size: 400px;
+}
+.vers2 {
+    color: blue;
+    font-size: 50px;
+    background-color: lightgray;
+    height: 80px;
+    large: 20px;
+    font-weight: bold;
+        inline-size: 300px;
+
+    }
+     fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    
+

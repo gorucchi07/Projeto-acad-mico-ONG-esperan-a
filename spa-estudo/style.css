@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #1f2937;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    line-height: 1.6;
+    background: #edf3df;
+}
+
+nav {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+
+nav a {
+    padding: 0.65rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    background: #2f5d50;
+    border-radius: 0.5rem;
+}
+
+nav a:hover {
+    background: #224a3f;
+}
+
+main {
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgb(17 24 39 / 12%);
+}

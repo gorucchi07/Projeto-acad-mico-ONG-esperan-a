@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    background: green;
+    height: 200vh;
+}
+
+.flex-item {
+    background: purple   
+}

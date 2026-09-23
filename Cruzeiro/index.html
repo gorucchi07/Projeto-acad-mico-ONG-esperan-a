@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Primeira Página</title>
+    <link rel="stylesheet" href="cruzeiro.css">
+</head>
+<body>
+    <h1>Bem-vindo ao HTML5!</h1>
+    <p class="vers1">Este é um parágrafo de exemplo.</p>
+    <h2>Aprendendo a semântica no HTML</h2>  
+    <p>Este é um parágrafo que pode conter <strong>texto em negrito</strong> 
+e <em>texto em itálico</em>.</p>
+    <h4>variações de semântica</h4>
+    <!-- Lista não ordenada -->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<!-- Lista ordenada -->
+<ol>
+    <li>Primeiro passo</li>
+    <li>Segundo passo</li>
+    <li>Terceiro passo</li>
+</ol>
+
+<table>
+    <thead>
+        <tr class="vers2">
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>João</td>
+            <td>25</td>
+            <td>São Paulo</td>
+        </tr>
+        <tr>
+            <td>Jotta</td>
+            <td>23</td>
+            <td>São Paulo</td>
+        </tr>
+</table>
+<article>
+    <header>
+        <h1>Título do Artigo</h1>
+        <time datetime="2024-03-15">15 de março de 2024</time>
+    </header>
+    
+    <section>
+        <h2>Introdução</h2>
+        <p>Conteúdo introdutório do artigo...</p>
+    </section>
+    
+    <section>
+        <h2>Desenvolvimento</h2>
+        <p>Desenvolvimento do conteúdo...</p>
+    </section>
+    
+    <footer>
+        <p>Autor: João Silva</p>
+    </footer>
+</article>
+<main>
+    <h1>Desenvolvimento Front-end</h1>
+    
+    <section>
+        <h2>Fundamentos</h2>
+        <article>
+            <h3>HTML5</h3>
+            <p>Conteúdo sobre HTML5...</p>
+        </article>
+        
+        <article>
+            <h3>CSS3</h3>
+            <p>Conteúdo sobre CSS3...</p>
+        </article>
+    </section>
+    
+    <aside>
+        <h4>Recursos Adicionais</h4>
+        <p>Links e materiais complementares...</p>
+    </aside>
+
+    <form>
+    <fieldset>
+        <legend>Informações Pessoais</legend>
+        
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" 
+               pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}">
+        
+        <label for="nascimento">Data de Nascimento:</label>
+        <input type="date" id="nascimento" name="nascimento">
+        
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" 
+               min="18" max="120">
+    </fieldset>
+    
+    <fieldset>
+        <legend>Preferências</legend>
+        
+        <label for="cor">Cor Favorita:</label>
+        <input type="color" id="cor" name="cor">
+        
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" name="volume" 
+               min="0" max="100" value="50">
+    </fieldset>
+    
+    <button type="submit">Enviar</button>
+</form>
+</main>
+
+<details>
+    <summary>Clique para ver mais informações</summary>
+    <p>Conteúdo adicional que aparece quando expandido.</p>
+</details>
+
+<datalist id="navegadores">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+    <option value="Edge">
+</datalist>
+
+<label for="navegador">Escolha seu navegador:</label>
+<input list="navegadores" id="navegador" name="navegador">
+
+<section>
+    <h1>Formulário de Contato</h1>
+    <!-- CPF -->
+    <input type="text" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" 
+           placeholder="000.000.000-00" title="Formato: 000.000.000-00"><margin-top: 19px;></margin-top:>  
+
+<!-- CEP -->
+<input type="text" pattern="[0-9]{5}-[0-9]{3}" 
+       placeholder="00000-000" title="Formato: 00000-000"><margin-top: 19px;></margin-top:>
+
+<!-- Telefone Celular -->
+<input type="tel" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
+       placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000">
+       </section>
+
+       <video width="800" height="450" controls poster="thumbnail.jpg">
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    <source src="video.ogg" type="video/ogg">
+   
+    <p>Seu navegador não suporta o elemento video.</p>
+   <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+        width="560" height="315" 
+        frameborder="0" 
+        allowfullscreen>
+</iframe>
+<canvas id="meuCanvas" width="800" height="600">
+    Seu navegador não suporta canvas.
+
+const canvas = document.getElementById('meuCanvas');
+const ctx = canvas.getContext('2d');
+
+// Retângulo preenchido
+ctx.fillStyle = '#3498db';
+ctx.fillRect(50, 50, 200, 100);
+
+// Retângulo com borda
+ctx.strokeStyle = '#e74c3c';
+ctx.lineWidth = 3;
+ctx.strokeRect(300, 50, 200, 100);
+
+// Círculo
+ctx.beginPath();
+ctx.arc(150, 250, 50, 0, 2 * Math.PI);
+ctx.fillStyle = '#2ecc71';
+ctx.fill();
+</canvas>
+</body>
+</html>
