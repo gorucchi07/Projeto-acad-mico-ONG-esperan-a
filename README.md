@@ -26,43 +26,46 @@ SPA front-end desenvolvida para a ONG Esperança, com navegação por hash route
 ## Estrutura principal
 
 ```text
-ONG/
-├── backup/              # Versões estáticas anteriores
-├── css/
-│   └── ONG.css          # Estilos próprios da aplicação
-├── html/
-│   └── index.html       # Shell principal da SPA
-├── imagens/
-│   └── bird.avif       # Imagem utilizada na página inicial
-└── js/
-    ├── ong-app.js       # Rotas, templates e eventos da interface
-    ├── grafico.js       # Integração com Chart.js
-    └── storage.js       # Leitura e gravação no localStorage
+.
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml  # Build e publicação no GitHub Pages
+├── ONG/
+│   ├── backup/               # Versões estáticas anteriores
+│   ├── css/
+│   │   └── ONG.css           # Estilos da aplicação
+│   ├── html/
+│   │   └── index.html        # Entrada da SPA
+│   ├── imagens/
+│   │   ├── bird.avif         # Imagem da página inicial
+│   │   └── feedback-*.png    # Capturas de referência da interface
+│   └── js/
+│       ├── ong-app.js        # Rotas, telas e eventos
+│       ├── grafico.js        # Gráfico de atividades
+│       └── storage.js        # Persistência no localStorage
+├── package.json              # Scripts e dependências de desenvolvimento
+├── package-lock.json
+└── vite.config.js            # Configuração de desenvolvimento e build
 ```
 
 ## Como executar
 
-1. Clone o repositório:
+Clone o repositório, instale as dependências e inicie o servidor de desenvolvimento do Vite:
 
 ```bash
 git clone https://github.com/gorucchi07/Projeto-acad-mico-ONG-esperan-a.git
+cd Projeto-acad-mico-ONG-esperan-a
+npm ci
+npm run dev
 ```
 
-2. Abra a pasta clonada no VS Code.
-3. Inicie um servidor local, como a extensão **Live Server**.
-4. Abra o arquivo `ONG/html/index.html` pelo servidor local.
+Abra no navegador a URL local exibida pelo Vite no terminal. O Vite está configurado para servir `ONG/html/index.html` como entrada do projeto.
 
-O uso de servidor local é recomendado porque a aplicação utiliza módulos ES6 com `import` e `export`. A aplicação também carrega Bootstrap e Chart.js por CDN, portanto a conexão com a internet deve estar disponível para carregar essas bibliotecas.
+Também é possível servir `ONG/html/index.html` com outra ferramenta de servidor local, mas não abra o arquivo diretamente via `file://`: a aplicação usa módulos ES6. Bootstrap e Chart.js são carregados por CDN, então é necessária conexão com a internet para esses recursos.
 
 ### Build de produção
 
-Para instalar as dependências do build:
-
-```bash
-npm install
-```
-
-Para gerar a versão otimizada:
+Com as dependências instaladas, gere a versão otimizada:
 
 ```bash
 npm run build
@@ -115,6 +118,7 @@ Os dados são armazenados no navegador nas chaves:
 
 Não existe servidor ou banco de dados nesta versão. A persistência é local ao navegador utilizado.
 
-## Repositório
+## Projetos
 
-[Projeto-acadêmico-ONG-Esperança no GitHub](https://github.com/gorucchi07/Projeto-acad-mico-ONG-esperan-a)
+- [Projeto Acadêmico ONG Esperança](https://github.com/gorucchi07/Projeto-acad-mico-ONG-esperan-a) — este repositório.
+- [Landingpage de Game of Thrones](https://github.com/gorucchi07/landingpage-game-of-thrones) — projeto separado, feito com HTML e CSS.
