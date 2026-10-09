@@ -13,13 +13,14 @@ Landingpage/
 ├── css/
 │   └── landing.css
 ├── fonts/
+│   └── game-of-thrones.ttf
 ├── html/
 │   └── landingpage.html
 ├── img/
-└── js/
+│   └── imagens referenciadas pelo HTML e CSS
 ```
 
-O HTML e o CSS estão em `html/` e `css/`; a página espera imagens em `img/` e fontes em `fonts/`. Esses arquivos de mídia não serão publicados neste repositório. Para exibir a página completa após cloná-la, adicione arquivos que você tenha autorização para usar nos caminhos esperados.
+O HTML e o CSS estão em `html/` e `css/`. A pasta `img/` contém apenas as imagens referenciadas nesses arquivos, e `fonts/` contém a fonte utilizada pelo CSS.
 
 ## Tecnologias
 
@@ -27,4 +28,4 @@ O HTML e o CSS estão em `html/` e `css/`; a página espera imagens em `img/` e 
 - CSS3
 - JavaScript (diretório reservado em `js/`)
 
-Não inclua nem redistribua imagens ou fontes sem autorização ou uma licença compatível.
+Publique ou redistribua os arquivos de mídia somente se tiver autorização ou licença compatível.
