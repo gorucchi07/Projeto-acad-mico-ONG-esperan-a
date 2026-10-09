@@ -1,0 +1,523 @@
+:root {
+    --primary-color: #021505;
+    --secondary-color: white;
+    --third-color: #eeee;
+    --forty-color: purple;
+    --gap: 3rem;
+}
+
+@font-face {
+    font-family: "Game of Thrones";
+    src: url("../fonts/game-of-thrones.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+    min-height: 100vh;
+    color: var(--primary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Game of Thrones", sans-serif;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 8rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 3.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+.responsive-table {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+table {
+    min-width: 36rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+table td,
+table th {
+    border: 0.2rem solid var(--third-color);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+table th {
+    background: var(--third-color);
+}
+
+.menu h1 img {
+    display: block;
+    width: 15rem;
+    height: 8rem;
+}
+
+.main-bg {
+    min-height: 100vh;
+    background-image: url("../img/sun-tornado.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--secondary-color);
+}
+
+.white-bg {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.main-content {
+    max-width: 120rem;
+    width: min(120rem, 90%);
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    padding-top: 9rem;
+}
+
+.section.white-bg {
+    box-shadow:
+        inset 0 8rem 15rem 0.5rem #004d20,
+        inset 0 3rem 8rem -0.5rem #004d20,
+        inset 0 -5rem 12rem -0.5rem #004d20;
+    min-height: 100vh;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--third-color);
+    z-index: 10;
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+}
+
+.menu h1 a {
+    color: inherit;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0%;
+    height: 0.2rem;
+    background: var(--forty-color);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+.intro-images {
+    display: contents;
+}
+
+.intro-text p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.intro-text,
+.intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.intro-images .intro-img {
+    min-width: 0;
+}
+
+.intro-img img {
+    display: block;
+    width: 100%;
+    max-height: auto;
+    object-fit: contain;
+}
+
+.character-content .intro-img {
+    height: 100%;
+}
+
+.character-content .intro-img img {
+    height: 100%;
+}
+
+@media (max-width: 700px) {
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-images {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .intro-images .intro-img {
+        flex: 0.5 1 1;
+    }
+
+    .intro-img img {
+        max-height: auto;
+    }
+
+    .character-content .intro-images {
+        display: contents;
+    }
+
+    .character-content .intro-img {
+        height: min(60vh, 40rem);
+        min-height: 30rem;
+    }
+}
+
+.intro-text h2 {
+    font-size: 8rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+}
+
+#chess .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: -4rem;
+}
+
+#chess h2 {
+    margin-bottom: 2rem;
+}
+
+#chess p {
+    width: min(75ch, 100%);
+    margin-inline: auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+#World .main-content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    min-height: 12rem;
+    width: min(140rem, 90%);
+    max-width: 180rem;
+}
+
+#World h2 {
+    margin-top: -1rem;
+    grid-column: 1 / -1;
+}
+
+#World p {
+    background: #f4f1f1;
+    border-radius: 2rem;
+    line-height: 1.6;
+}
+
+#World .casa-card {
+    justify-content: space-between;
+    padding: 2rem;
+    background: #f4f1f1;
+    border-radius: 2rem;
+}
+
+#World .casa-card h3 {
+    font-size: 2.5rem;
+
+}
+
+#World .casa-card p {
+    line-height: 1.2
+}
+
+@media (max-width: 700px) {
+    #World .main-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 440px) {
+    #World .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+#gallery .main-content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    min-height: 12rem;
+    width: min(250rem, 97%);
+    max-width: 300rem;
+}
+
+#gallery h2 {
+    margin-top: -1rem;
+    grid-column: 1 / -1;
+    padding-bottom: 4rem;
+}
+
+
+#gallery .picture-card {
+    position: relative;
+    width: 100%;
+    max-width: 36rem;
+    aspect-ratio: 16 / 9;
+    overflow: visible;
+    border-radius: 2rem;
+}
+
+#gallery .picture-card:hover {
+    z-index: 1;
+}
+
+#gallery .picture-card h3 {
+    position: fixed;
+    top: calc(50% - min(40vh, 35rem) + 1.5rem);
+    left: 50%;
+    z-index: 101;
+    margin: 0;
+    color: white;
+    font-size: clamp(1.8rem, 3vw, 3.2rem);
+    text-align: center;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 80%);
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+}
+
+#gallery .picture-card:hover h3 {
+    visibility: visible;
+    opacity: 1;
+}
+
+#gallery .picture-card img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+    transition: transform 300ms ease-in-out;
+}
+
+#gallery .picture-card:hover img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    width: min(80vw, 100rem);
+    height: min(80vh, 70rem);
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    border-radius: 2rem;
+    clip-path: inset(0 round 6rem);
+}
+
+#contato .contato-form {
+    display: flex;
+
+}
+
+#contato .intro-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 6rem;
+}
+
+#contato .intro-text {
+    min-width: 0;
+    align-items: stretch;
+}
+
+#contato .intro-text h2 {
+    font-size: clamp(3.2rem, 5vw, 6rem);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+#contato .contato-form,
+#contato fieldset {
+    width: 100%;
+    min-width: 0;
+}
+
+.contato-form .form-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-group {
+    flex: 1 1 calc(50% - var(--gap));
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    text-align: left;
+    border: none;
+    background: var(--third-color);
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+    text-align: left;}
+
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+
+#contato fieldset {
+    padding: 2rem;
+}
+
+#contato .intro-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap);
+}
+
+#contato .intro-images .intro-img {
+    min-width: 0;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contato .intro-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 700px) {
+    #contato .intro-content {
+        grid-template-columns: 1fr;
+    }
+
+    #contato .intro-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #contato .intro-text h2 {
+        font-size: clamp(3rem, 10vw, 5rem);
+    }
+}
