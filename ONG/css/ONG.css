@@ -520,6 +520,10 @@ footer{
         padding: var(--espaco-4);
     }
 
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .menu ul {
         flex-wrap: wrap;
         gap: var(--espaco-3);
@@ -578,6 +582,10 @@ footer{
 @media (min-width: 30.0625rem) and (max-width: 47.99rem) {
     .container {
         padding: var(--espaco-6);
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .hero-text,
