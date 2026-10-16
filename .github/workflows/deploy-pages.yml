@@ -1,8 +1,12 @@
-name: Deploy ONG Esperanca
+name: Deploy Landingpage to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - develop
+    paths:
+      - "udemy/Landingpage/**"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -11,32 +15,32 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build production
-        run: npm run build
+      - name: Prepare static site
+        run: |
+          mkdir -p _site/css _site/fonts _site/img
+          cp udemy/Landingpage/css/landing.css _site/css/
+          cp udemy/Landingpage/fonts/game-of-thrones.ttf _site/fonts/
+          cp -R udemy/Landingpage/img/. _site/img/
+          cp udemy/Landingpage/html/landingpage.html _site/index.html
+          sed -i 's#\.\./css/#css/#g; s#\.\./img/#img/#g' _site/index.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
 
   deploy:
     environment:
