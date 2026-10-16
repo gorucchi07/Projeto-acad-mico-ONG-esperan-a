@@ -120,6 +120,7 @@ table th {
 }
 
 .white-bg {
+    min-height: auto;
     background: var(--secondary-color);
     color: var(--primary-color);
 }
@@ -127,14 +128,21 @@ table th {
 .main-content {
     max-width: 120rem;
     width: min(120rem, 90%);
+    min-width: 0;
     margin: 0 auto;
     padding: var(--gap);
+}
+
+#chess .main-content h2 {
+    padding-top: 5rem;
 }
 
 .section {
     display: flex;
     align-items: center;
     padding-top: 9rem;
+    width: 100%;
+    min-width: 0;
 }
 
 .section.white-bg {
@@ -204,8 +212,12 @@ table th {
 
 .intro-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
+}
+
+.intro-text {
+    min-width: 0;
 }
 
 .intro-images {
@@ -244,6 +256,54 @@ table th {
 }
 
 @media (max-width: 700px) {
+    .menu-content {
+        width: 100%;
+        gap: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .menu h1 img {
+        width: 10rem;
+    }
+
+    .menu nav {
+        flex: 1;
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    .menu nav {
+        scrollbar-color: var(--forty-color) transparent;
+        /* Firefox: polegar e trilho */
+        scrollbar-width: thin;
+    }
+
+    .menu nav::-webkit-scrollbar {
+        height: 0.8rem;
+        /* Altura da barra horizontal */
+    }
+
+    .menu nav::-webkit-scrollbar-track {
+        background: transparent;
+        /* Trilho */
+    }
+
+    .menu nav::-webkit-scrollbar-thumb {
+        background-color: var(--forty-color);
+        /* Parte que você arrasta */
+        border-radius: 999px;
+    }
+
+    .menu ul {
+        flex-wrap: nowrap;
+        width: max-content;
+    }
+
+    .menu ul li a {
+        padding: 1.5rem 1rem;
+    }
+
     .intro-content {
         grid-template-columns: 1fr;
     }
@@ -269,6 +329,21 @@ table th {
     .character-content .intro-img {
         height: min(60vh, 40rem);
         min-height: 30rem;
+    }
+
+    .section h2,
+    .intro-text h2 {
+        font-size: clamp(2.4rem, 8vw, 5rem);
+        overflow-wrap: anywhere;
+    }
+
+    #contato .intro-text h2 {
+        font-size: clamp(2.4rem, 8vw, 5rem);
+    }
+
+    #World .main-content,
+    #gallery .main-content {
+        width: 100%;
     }
 }
 
@@ -339,10 +414,23 @@ table th {
     #World .main-content {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    #gallery .main-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #World .casa-card {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
 }
 
 @media (max-width: 440px) {
     #World .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    #gallery .main-content {
         grid-template-columns: 1fr;
     }
 }
@@ -471,11 +559,30 @@ table th {
     background: var(--third-color);
     padding: 0.5rem;
     width: 100%;
+    transition: box-shadow 200ms ease-in-out;
+}
+
+.form-group button {
+    transition: box-shadow 200ms ease-in-out;
+}
+
+.form-group button:hover,
+.form-group button:focus-visible {
+    box-shadow: 0 0 11px 2px var(--forty-color);
 }
 
 .form-group input::placeholder,
-.form-group textarea::placeholder{
-    text-align: left;}
+.form-group textarea::placeholder {
+    text-align: left;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group input:hover,
+.form-group textarea:hover {
+    box-shadow: 0 0 11px 2px var(--forty-color);
+}
 
 body .full-width {
     width: 100%;
@@ -519,5 +626,214 @@ body .full-width {
 
     #contato .intro-text h2 {
         font-size: clamp(3rem, 10vw, 5rem);
+    }
+}
+
+.site-footer {
+    border-top: 0.2rem solid var(--forty-color);
+    background: #07100b;
+    color: #f4f1e8;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-brand img {
+    display: block;
+    width: min(22rem, 100%);
+    height: auto;
+}
+
+.footer-brand p {
+    margin-top: 1.5rem;
+    color: #d0bf93;
+    font-style: italic;
+}
+
+.footer-nav h2,
+.footer-contact h2 {
+    margin-bottom: 1.5rem;
+    color: #d0bf93;
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+.footer-nav ul {
+    display: grid;
+    gap: 0.8rem;
+    list-style: none;
+}
+
+.site-footer a {
+    color: inherit;
+    transition: color 200ms ease-in-out;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: #d0bf93;
+}
+
+.footer-contact p {
+    margin-bottom: 1rem;
+}
+
+.footer-contact>a {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgb(244 241 232 / 25%);
+    color: #d0bf93;
+    font-size: 1.6rem;
+}
+
+@media (max-width: 700px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 440px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .section h2,
+    .section .intro-text h2 {
+        font-size: clamp(2.4rem, 8vw, 5rem);
+        overflow-wrap: anywhere;
+    }
+
+    #contato .intro-text h2 {
+        font-size: clamp(2.4rem, 8vw, 5rem);
+    }
+}
+
+#actors {
+    scrollbar-color: var(--forty-color) transparent;
+    scrollbar-width: thin;
+}
+
+@media (max-width: 700px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* AJUSTE TEMPORARIO: remova este bloco para desfazer */
+@media (max-width: 700px) {
+    #gallery .main-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .intro-img img {
+        height: auto;
+        max-height: 75vh;
+        object-fit: contain;
+    }
+
+    .character-content .intro-img {
+        height: min(75vh, 50rem);
+        min-height: 0;
+    }
+
+    .character-content .intro-img img {
+        height: 100%;
+    }
+
+    #tyrion .intro-img {
+        height: min(75vh, 50rem);
+        min-height: 0;
+    }
+
+    #tyrion .intro-img img {
+        height: 100%;
+    }
+}
+
+.close-menu {
+    display: none;
+}
+
+/* AJUSTE TEMPORARIO PARA TELAS INTERMEDIARIAS */
+@media (min-width: 701px) and (max-width: 1000px) {
+    .intro-text h2 {
+        font-size: 5rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+#gallery .picture-card {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 700px) {
+    .menu {
+        bottom: 0;
+    }
+
+    .menu-content,
+    .menu-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .close-menu {
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .close-menu-label::after {
+        content: '≡';
+        position: fixed;
+        z-index: 11;
+        top: 2rem;
+        right: 1rem;
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        height: 3rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    .close-menu:checked~.menu{
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
     }
 }
