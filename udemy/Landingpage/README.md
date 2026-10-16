@@ -8,13 +8,15 @@ Abra `html/landingpage.html` usando uma extensão de servidor local, como o Live
 
 ## Publicação
 
-O GitHub Actions publica esta Landingpage no GitHub Pages quando há alterações em `udemy/Landingpage/` na branch `develop`.
+O GitHub Actions publica automaticamente este site no GitHub Pages quando há alterações nos arquivos do site na branch `main`.
 
-Depois de habilitar o GitHub Pages com a opção **GitHub Actions** em **Settings > Pages** do repositório, o site ficará disponível em:
+Para habilitar a publicação, abra **Settings > Pages** no repositório [`landingpage-game-of-thrones`](https://github.com/gorucchi07/landingpage-game-of-thrones/settings/pages) e selecione **GitHub Actions** em **Build and deployment > Source**. Essa configuração só precisa ser feita uma vez por alguém com permissão de administrador no repositório.
 
-<https://gorucchi07.github.io/Projeto-acad-mico-ONG-esperan-a/>
+O site ficará disponível em:
 
-O workflow prepara a página como `index.html` na raiz publicada e inclui apenas os estilos, imagens e fontes usados pela Landingpage.
+<https://gorucchi07.github.io/landingpage-game-of-thrones/>
+
+O workflow monta `index.html` na raiz publicada e inclui os estilos, imagens e fontes necessários, sem publicar outros projetos.
 
 ## Estrutura
 
